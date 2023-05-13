@@ -8,7 +8,7 @@ export default async function handler(req, res) {
       console.log('Connected to database');
   
       // Query database for all products
-      const products = await Product.find().exec();
+      const products = await Product.find({}).limit(10);
       console.log('Products:', products);
   
       res.json(products);
