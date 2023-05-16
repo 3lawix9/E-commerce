@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Items from '../../Components/Shop'
+import Items from '../../Components/Index'
 
 
 export default function Home() {
