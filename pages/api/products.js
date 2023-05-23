@@ -22,7 +22,6 @@ export default async function handler(req, res) {
         // Connect to database
         await dbConnect();
         const {ids} = req.query;
-        console.log("object ids :" , {ids})
         if(ids) { 
             const idsArray = ids.split(',')
             console.log('idsarray', idsArray);
