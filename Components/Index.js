@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Items from './Items';
+import Footer from './Footer';
 
-export default function App() {
+export default function Index() {
   const [productInfo, setProductInfo] = useState([]);
   const [search,setSearch] = useState('');
 
@@ -19,6 +20,7 @@ export default function App() {
       item.category.toLowerCase().includes(search.toLowerCase()) ||
       item.name.toLowerCase().includes(search.toLowerCase())
   );
+  
   return (
     <div className='p-5'>
       <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder='Search for products...' className='bg-gray-200 rounded-xl p-3 w-full text-black' />
@@ -26,12 +28,11 @@ export default function App() {
         <div key={categoryName}>
           {filteredProducts.find(p => p.category === categoryName) && (
             <div>
-              <h1 className=' text-2xl font-bold mb-5 p-7'>{categoryName}</h1>
+              <h1 className=' text-2xl capitalize  font-bold mb-5 p-7'>{categoryName}</h1>
           <div className="flex gap-4 overflow-x-scroll snap-x scrollbar-hide">
           {filteredProducts.filter(item => item.category === categoryName).map(product => (
             <div key={product._id} >
               <Items {...product }  />
-            {console.log({productInfo})}
 
             </div>
           ))}
@@ -42,6 +43,7 @@ export default function App() {
           
         </div>
       ))}
+      <Footer/>
     </div>
   );
 }

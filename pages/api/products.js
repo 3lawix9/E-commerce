@@ -21,9 +21,22 @@ export default async function handler(req, res) {
     try {
         // Connect to database
         await dbConnect();
+        const {ids} = req.query;
+        console.log("object ids :" , {ids})
+        if(ids) { 
+            const idsArray = ids.split(',')
+            console.log('idsarray', idsArray);
+
+            res.json(Product.find({
+                '_id':{$in:idsArray}
+            }).exec())
+
+        }else {
+            console.log("no Ids found for product");
+            res.json(await findAllProducts());
+        }
         console.log('Connected to database');
 
-        res.json(await findAllProducts());
     } catch (error) {
         console.log('Error:', error);
         res.status(500).json({ error: 'Server error' });
