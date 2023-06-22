@@ -10,7 +10,7 @@ function Items({_id,name,price,description,picture}) {
     setSelectedProducts(prev => [...prev, _id])
   }
   return (
-    <div className="w-64 border-black border-solid ">
+    <div className="w-64 border-black border-solid  ">
         <div className="bg-gray-200 p-5 rounded-xl">
         <Image priority={true} alt='image' src={image} width={200} height={200} />
         </div>

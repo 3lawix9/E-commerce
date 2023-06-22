@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Items from './Items';
 import Footer from './Footer';
+import Layout from './Layout';
 
 export default function Index() {
   const [productInfo, setProductInfo] = useState([]);
@@ -22,7 +23,9 @@ export default function Index() {
   );
   
   return (
+    <Layout>
     <div className='p-5'>
+      
       <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder='Search for products...' className='bg-gray-200 rounded-xl p-3 w-full text-black' />
       {categoriesNames.map(categoryName => (
         <div key={categoryName}>
@@ -43,10 +46,7 @@ export default function Index() {
           
         </div>
       ))}
-      <Footer/>
     </div>
+    </Layout>
   );
 }
-
-
-

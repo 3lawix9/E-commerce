@@ -14,7 +14,7 @@ export async function dbConnect() {
 
 export async function findAllProducts() {
 
-        return Product.find().exec(1);
+        return Product.find().exec();
 }
 
 export default async function handler(req, res) {
@@ -26,7 +26,8 @@ export default async function handler(req, res) {
             const idsArray = ids.split(',')
             console.log('idsarray', idsArray);
 
-            res.json(Product.find({
+            res.json(
+                await Product.find({
                 '_id':{$in:idsArray}
             }).exec())
 
@@ -52,4 +53,4 @@ const productSchema = new mongoose.Schema({
 });
 
 
-const Product = mongoose.models.Products || mongoose.model('Products', productSchema);
+export const Product = mongoose.models.Products || mongoose.model('Products', productSchema);

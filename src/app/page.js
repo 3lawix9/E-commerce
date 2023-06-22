@@ -7,9 +7,11 @@ import CheckoutNow from '../../pages/checkout'
 
 export default function Home() {
   return (
+    <div>
     <ProductsContextProvider>
-      <CheckoutNow/>
-      <Index/>
-     </ProductsContextProvider>
+      
+      <Index />
+    </ProductsContextProvider>
+  </div>
   )
 }
