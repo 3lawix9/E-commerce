@@ -1,7 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Items from './Items';
-import Footer from './Footer';
 import Layout from './Layout';
 
 export default function Index() {

@@ -1,5 +1,5 @@
 
-import Order from "../../models/Order";
+import Order from "../../Schemas/Order";
 import {buffer} from 'micro';
 import { dbConnect } from "./products";
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
