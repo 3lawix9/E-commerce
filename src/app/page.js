@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <div>
     <ProductsContextProvider>
-      
       <Index />
     </ProductsContextProvider>
   </div>

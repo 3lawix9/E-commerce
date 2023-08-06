@@ -6,7 +6,7 @@ export async function dbConnect() {
         return mongoose.connection.asPromise();
     }
     
-    return await mongoose.connect('mongodb://localhost:27017/e-commerce', {
+    return await mongoose.connect('mongodb+srv://Ali:Az123123@cluster7.azbqs6b.mongodb.net/?retryWrites=true&w=majority/e-commerce', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

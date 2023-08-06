@@ -6,6 +6,7 @@ import {
   Navbar,
   Typography,
   IconButton,
+  Button,
   Input,
 } from "@material-tailwind/react";
 import { BellIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
@@ -39,13 +40,13 @@ export default function Index() {
   );
 
   const navbar = (
-    <Navbar className=" sticky mx-auto max-w-screen-xl px-4 py-3 border-0">
+    <Navbar className="mx-auto max-w-screen-xl px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-y-4 text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           variant="h6"
-          className="mr-4  text-black font-bold cursor-pointer py-1.5"
+          className="mr-4 ml-2 text-black font-bold cursor-pointer py-1.5"
         >
           Electric Store
         </Typography>
@@ -66,10 +67,10 @@ export default function Index() {
   );
 
   return (
-    <Layout>
+    <>
         {navbar}
         {categoriesNames.map(categoryName => (
-          <div key={categoryName}  className='sm:ml-24'>
+          <div key={categoryName}  className='lg:ml-24'>
             {filteredProducts.find(p => p.category === categoryName) && (
               <div>
                 <h1 className=" text-2xl capitalize  font-bold mb-5 p-7">
@@ -86,6 +87,7 @@ export default function Index() {
             )}
           </div>
         ))}
-    </Layout>
+    <Layout/>
+    </>
   );
 }

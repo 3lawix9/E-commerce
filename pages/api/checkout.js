@@ -1,6 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 import Order from "../../Schemas/Order";
-import { dbConnect, Product  } from "./products";
+import { dbConnect, Product } from "./products";
 
 
 export default async function handler(req, res) {
