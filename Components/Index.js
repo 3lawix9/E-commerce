@@ -49,14 +49,7 @@ export default function Index() {
         >
           Electric Store
         </Typography>
-        <div className="ml-auto flex gap-4 md:mr-4">
-          <IconButton variant="text">
-            <Cog6ToothIcon className="text-gray-600 h-4 w-4" />
-          </IconButton>
-          <IconButton variant="text">
-            <BellIcon className="text-gray-600 h-4 w-4" />
-          </IconButton>
-        </div>
+
         <div className="relative flex w-full gap-0 md:w-max">
           {input}
         </div>
@@ -77,7 +70,7 @@ export default function Index() {
                 </h1>
                 <div className="flex gap-4 overflow-x-scroll snap-x scrollbar-hide">
                   {filteredProducts.filter(item => item.category === categoryName).map(product => (
-                    <div key={product._id}>
+                    <div key={product._id} >
                       <Items {...product} />
                     </div>
                   ))}

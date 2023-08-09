@@ -8,7 +8,7 @@ export default function Footer() {
   const {selectedProducts} = useContext(ProductsContext);
   const productCount = selectedProducts?.length || 0;
   return (
-    <footer className="sticky bottom-0 bg-white p-5 w-full flex border-t border-gray-200 justify-center space-x-12 text-gray-400">
+    <footer className="sticky bottom-0  p-5 w-full flex border-t  justify-center space-x-12 text-gray-400 ">
       <Link href={'/'}>
         <span className={(path === '/' ? 'text-blue-500' : '')+" flex justify-center items-center  flex-col"}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

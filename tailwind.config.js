@@ -5,12 +5,18 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./Components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  daisyui: {
+    themes: ["light"],
+  },
   theme: {
     extend: {
       
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("daisyui"),
+  require('tailwind-scrollbar-hide')
+
+],
+  
+  
 }

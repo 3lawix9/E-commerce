@@ -109,7 +109,7 @@ function CheckoutNow() {
           </div>
           <input type="hidden" name="name" value={name}/>
           <input type="hidden" name="products" value={selectedProducts}/>
-          <button className="w-full bg-blue-600 p-4 rounded-xl font-bold shadow-xl text-white  ">دفع الآن  </button>
+          <button className="w-full bg-blue-600 p-4 mb-32 rounded-xl font-bold shadow-xl text-white  ">دفع الآن  </button>
         </div>
         </form>
 
