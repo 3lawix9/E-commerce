@@ -1,0 +1,10 @@
+
+  {
+    "rewrites": [
+        {
+            "source": "/api/products/(.*)",
+            "destination": "https://e-commerce-30wli52p5-3lawix9.vercel.app/api/products/$1"
+          }
+    ]
+  }
+ 
