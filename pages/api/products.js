@@ -16,8 +16,9 @@ export async function dbConnect() {
     if (mongoose.connection.readyState === 1) {
         return mongoose.connection;
     }
+    const MONGODB_URL = process.env.MONGODB_URL;
 
-    return mongoose.connect('mongodb+srv://Ali:Az123123@cluster111.qlrtxpo.mongodb.net/E-commerce', {
+    return mongoose.connect(MONGODB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });

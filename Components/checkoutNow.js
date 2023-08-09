@@ -21,7 +21,7 @@ function CheckoutNow() {
   useEffect(() => {
     const uniqIds = [...new Set(selectedProducts)];
     if (uniqIds.length > 0) {
-    fetch('http://localhost:3000/api/products?ids='+uniqIds.join(','))
+    fetch('/api/products?ids='+uniqIds.join(','))
     .then((response) => response.json())
     .then((json) => setProductsInfos(json))
     .catch((error) => {
