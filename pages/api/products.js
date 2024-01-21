@@ -16,7 +16,7 @@ export async function dbConnect() {
     if (mongoose.connection.readyState === 1) {
         return mongoose.connection;
     }
-    const MONGODB_URL = process.env.MONGODB_URL;
+    const MONGODB_URL = 'mongodb+srv://Ali:Az123123@cluster111.qlrtxpo.mongodb.net/?retryWrites=true&w=majorityE-commerce';
 
     return mongoose.connect(MONGODB_URL, {
         useNewUrlParser: true,
@@ -26,7 +26,7 @@ export async function dbConnect() {
 
 // Fetch all products from the database
 export async function findAllProducts() {
-    return Product.find().exec(1);
+    return Product.find().exec();
 }
 
 // API handler function
@@ -46,6 +46,7 @@ export default async function handler(req, res) {
             }).exec();
             
             res.json(products);
+            console.log(products);
         } else {
             console.log('No IDs found for products');
             

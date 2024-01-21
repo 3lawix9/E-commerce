@@ -15,7 +15,7 @@ export default function Index() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+    fetch('api/products')
       .then(res => res.json())
       .then(json => setProductInfo(json));
   }, []);
